@@ -169,10 +169,6 @@ export const a={
             "contents":[
                 {
                     "kind":"block",
-                    "type":"controls_if"
-                },
-                {
-                    "kind":"block",
                     "type":"logic_compare"
                 },
                 {
@@ -194,26 +190,42 @@ export const a={
             "name":"Control",
             "contents":[
                 {
-                    "kind":"block",
-                    "type":"base_delay"
+                  "kind": "block",
+                  "type": "controls_if"
                 },
                 {
-                    "kind":"block",
-                    "type":"logic_compare"
+                  "kind": "block",
+                  "type": "controls_for"
                 },
                 {
-                    "kind":"block",
-                    "type":"logic_operation"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_negate"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_null"
+                  "kind": "block",
+                  "type": "controls_whileUntil"
                 },
             ]
+        },
+        {
+          "kind":"category",
+          "name":"Matematica",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "math_number"
+              },
+              {
+                "kind": "block",
+                "type": "math_arithmetic"
+              },
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Text",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "text"
+              },
+          ]
         },
     ]
 }

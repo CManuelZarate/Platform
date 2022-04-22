@@ -1,14 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as Blockly from 'blockly';
+//import * as Blockly from 'blockly';
+import { a, jsonTools, xmlTools } from '../utils';
+
 //import Blockly from 'blockly';
 //import * as Blockly from '';
-import { a, jsonTools, xmlTools } from '../utils';
+
+
 //import "../Elementos/arduino_compressed";
 //import Blockly.Arduino from "../Elementos/arduino_compressed.js";
 //import * as Arduino  from '../Elementos/arduino_compressed.js'
 /* import second from '../../assets/arduino_compressed.js' */
+
+import * as Blockly from 'blockly/core';
+import 'blockly/blocks';
+
+import  'blockly-arduino/arduino'; 
+import  'blockly-arduino/blocks';
+
 declare var hola:any;
+
+
 
 @Component({
   selector: 'app-blockly',
@@ -57,10 +69,10 @@ export class BlocklyComponent implements OnInit {
   }
 
   ngDoCheck(): void {
-    //let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
+    let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
     //let code = Blockly.Arduino.workspaceToCode(this.ws);
-    let code = (Blockly as any).JavaScript.workspaceToCode(this.ws);
-    console.log(code);
+    //let code = (Blockly as any).JavaScript.workspaceToCode(this.ws);
+    //console.log(code);
     let area= <HTMLInputElement>document.getElementById('code')!;
     area.value = code;
     //Blockly.Arduino.workspaceToCode(workspace);

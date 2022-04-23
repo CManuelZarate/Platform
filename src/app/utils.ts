@@ -189,18 +189,28 @@ export const a={
             "kind":"category",
             "name":"Control",
             "contents":[
-                {
-                  "kind": "block",
-                  "type": "controls_if"
-                },
-                {
-                  "kind": "block",
-                  "type": "controls_for"
-                },
-                {
-                  "kind": "block",
-                  "type": "controls_whileUntil"
-                },
+              {
+                "kind": "block",
+                "type": "base_delay",
+                "contents": [
+                  {
+                    "kind": "block",
+                    "type": "math_number"
+                  },
+                ]
+              },
+              {
+                "kind": "block",
+                "type": "controls_if"
+              },
+              {
+                "kind": "block",
+                "type": "controls_for"
+              },
+              {
+                "kind": "block",
+                "type": "controls_whileUntil"
+              },
             ]
         },
         {

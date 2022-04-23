@@ -61,7 +61,9 @@ export class BlocklyComponent implements OnInit {
       toolbox: a
         
     } as Blockly.BlocklyOptions);
-
+    console.log("el ws en on initi es :" ,this.ws);
+    
+    //this.ws.addChangeListener(this.actualizar);
     /* let code =  (Blockly as any).JavaScript.workspaceToCode(this.ws);
     console.log("el codigo es : ", code); */
     //hola();
@@ -80,6 +82,75 @@ export class BlocklyComponent implements OnInit {
   }
 
 
+  actualizar(){
+    console.log("entro actualizar");
+    console.log("el ws en el actualizar es ", this.ws);
+    //let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
+    //let area= <HTMLInputElement>document.getElementById('code')!;
+    //area.value = code;
+  }
+
+  uploadClick(){//funcio de blockduino
+    let code = (Blockly as any).Arduino.workspaceToCode();
+
+    alert("Ready to upload to Arduino.");
+    
+    this.uploadCode(code, (status:any, errorInfo:any) => {
+        if (status == 200) {
+            alert("Program uploaded ok");
+        } else {
+            alert("Error uploading program: " + errorInfo);
+        }
+    });
+  }
+
+  uploadCode(code:any, callback:any){
+    //let target = document.getElementById("code");
+
+    let url = "http://127.0.0.1:8080/";
+    let method = "POST";
+
+    let async = true;
+
+    let request = new XMLHttpRequest();
+   
+    request.onreadystatechange = function() {
+        if (request.readyState != 4) { 
+            return; 
+        }
+        
+        //spinner.stop();
+        
+        var status = parseInt(request.status.toString()); // HTTP response status, e.g., 200 for "200 OK"
+        var errorInfo = null;
+        switch (status) {
+        case 200:
+            break;
+        case 0:
+            errorInfo = "code 0\n\nCould not connect to server at " + url + ".  Is the local web server running?";
+            break;
+        case 400:
+            errorInfo = "code 400\n\nBuild failed - probably due to invalid source code.  Make sure that there are no missing connections in the blocks.";
+            break;
+        case 500:
+            errorInfo = "code 500\n\nUpload failed.  Is the Arduino connected to USB port?";
+            break;
+        case 501:
+            errorInfo = "code 501\n\nUpload failed.  Is 'ino' installed and in your path?  This only works on Mac OS X and Linux at this time.";
+            break;
+        default:
+            errorInfo = "code " + status + "\n\nUnknown error.";
+            break;
+        };
+        
+        callback(status, errorInfo);
+    };
+
+    request.open(method, url, async);
+    request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+    request.send(code);
+
+  }
 
   serializar(){
     //let json = Blockly.serialization.workspaces.save.workspaceToCode(this.ws);

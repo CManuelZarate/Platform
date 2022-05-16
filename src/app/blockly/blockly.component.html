@@ -19,6 +19,11 @@ function renderContent() {
   </div>
   <div class="row">
     <button (click)="uploadClick()"> cargar </button>
+    <button (click)="resetClick()"> reset workspace </button>
+    <button (click)="saveArduino()"> guardar codigo arduino </button>
+    <button (click)="save()"> guardar codigo xml </button>
+    <button id="fakeload"> cargar codigo xml </button>
+    <input (click)="cargar()"  type="file" id="load"/>
   </div>
   <!-- <div class="row">
     <div id="blocklyDiv" class="col-6"></div>

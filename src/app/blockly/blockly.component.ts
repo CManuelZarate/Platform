@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //import * as Blockly from 'blockly';
 import { a, jsonTools, xmlTools } from '../utils';
-
+import { saveAs } from 'file-saver';
 //import Blockly from 'blockly';
 //import * as Blockly from '';
 
@@ -151,6 +151,85 @@ export class BlocklyComponent implements OnInit {
     request.send(code);
 
   }
+
+  resetClick(){
+    this.ws.clear();
+    //let code = "void setup() {} void loop() {}";
+    //let area= <HTMLInputElement>document.getElementById('code')!;
+    //area.value = code;
+
+    /* this.uploadCode(code, (status :any, errorInfo:any) => {
+        if (status != 200) {
+            alert("Error resetting program: " + errorInfo);
+        }
+    }); */
+  }
+
+  saveArduino(){
+    let fileName = window.prompt('What would you like to name your file?', 'BlocklyDuino')
+    //doesn't save if the user quits the save prompt
+    if(fileName){
+      let blob = new Blob([(Blockly as any).Arduino.workspaceToCode()], {type: 'text/plain;charset=utf-8'});
+      saveAs(blob, fileName + '.ino');
+    }
+  }
+
+  save(){
+    let xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+    let data = Blockly.Xml.domToText(xml);
+    let fileName = window.prompt('What would you like to name your file?', 'BlocklyDuino');
+    // Store data in blob.
+    // var builder = new BlobBuilder();
+    // builder.append(data);
+    // saveAs(builder.getBlob('text/plain;charset=utf-8'), 'blockduino.xml');
+    if(fileName){
+      var blob = new Blob([data], {type: 'text/xml'});
+      saveAs(blob, fileName + ".xml");
+    } 
+  }
+
+  cargar(){
+    let loadInput = document.getElementById('load');
+    loadInput!.addEventListener('change', this.load, false);
+    document.getElementById('fakeload')!.onclick = function() {
+      (<HTMLInputElement>loadInput).click();
+    };
+  }
+
+  load(event:any){
+    let files = event.target.files;
+    // Only allow uploading one file.
+    if (files.length != 1) {
+      return;
+    }
+
+    // FileReader
+    let reader = new FileReader();
+    reader.onloadend = function(event) {
+      let target = event.target!;
+      // 2 == FileReader.DONE
+      if (target.readyState == 2) {
+        let xml
+        try {
+          let a=<string>target.result!;
+          xml = Blockly.Xml.textToDom(a);
+        } catch (e) {
+          alert('Error parsing XML:\n' + e);
+          return;
+        }
+        let count = Blockly.mainWorkspace.getAllBlocks(true).length;//examinar q hace ese true
+        if (count && confirm('Replace existing blocks?\n"Cancel" will merge.')) {
+          Blockly.mainWorkspace.clear();
+        }
+        Blockly.Xml.domToWorkspace(xml,Blockly.mainWorkspace);//cambie pos
+      }
+      // Reset value of input after loading because Chrome will not fire
+      // a 'change' event if the same file is loaded again.
+      (<HTMLInputElement>document.getElementById('load')).value = '';
+    };
+    reader.readAsText(files[0]);
+  }
+
 
   serializar(){
     //let json = Blockly.serialization.workspaces.save.workspaceToCode(this.ws);

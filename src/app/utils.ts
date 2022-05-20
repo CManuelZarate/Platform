@@ -169,7 +169,8 @@ export const a={
             "contents":[
                 {
                     "kind":"block",
-                    "type":"logic_compare"
+                    "type":"logic_compare",
+                    "comment":"asdas"
                 },
                 {
                     "kind":"block",

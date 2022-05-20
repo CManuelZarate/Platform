@@ -30,7 +30,8 @@ declare var hola:any;
 export class BlocklyComponent implements OnInit {
 
   constructor() { }
-  ws:any; //espacio de trabajo
+  //ws:any; //espacio de trabajo
+  ws:Blockly.Workspace | any; //espacio de trabajo
   path:string = ''
   ngOnInit(): void {
 
@@ -62,6 +63,8 @@ export class BlocklyComponent implements OnInit {
         
     } as Blockly.BlocklyOptions);
     console.log("el ws en on initi es :" ,this.ws);
+    this.ws.addChangeListener(this.actualizar);
+    
     
     //this.ws.addChangeListener(this.actualizar);
     /* let code =  (Blockly as any).JavaScript.workspaceToCode(this.ws);
@@ -79,12 +82,29 @@ export class BlocklyComponent implements OnInit {
     area.value = code;
     //Blockly.Arduino.workspaceToCode(workspace);
     //Arduino.workspaceToCode();
+    //console.log(Blockly.WorkspaceComment.prototype);    
   }
 
 
   actualizar(){
     console.log("entro actualizar");
-    console.log("el ws en el actualizar es ", this.ws);
+    console.log("el ws en el actualizar es ", Blockly.getMainWorkspace().getAllBlocks(true));
+    console.log("el id del bloque seleccionado es  ", Blockly.selected);//obtengo el id del bloque seleccionado
+    let bloque =Blockly.getMainWorkspace().getBlockById(Blockly.selected.id);
+    //Blockly.Comment.drawIcon_(bloque);
+    bloque.inputList[2].setVisible(true);
+    bloque.inputList[3].setVisible(true);
+    
+    bloque.commentModel.pinned=true;
+    bloque.commentModel.text="gaaaaaa";
+    console.log("modelo",bloque.commentModel);
+    console.log("get comment text",bloque.getCommentText());
+     
+    /**no entiendo por q el this.ws no funca*/
+
+
+
+
     //let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
     //let area= <HTMLInputElement>document.getElementById('code')!;
     //area.value = code;
@@ -153,6 +173,7 @@ export class BlocklyComponent implements OnInit {
   }
 
   resetClick(){
+    console.log("el ws en el actualizar es ", this.ws);
     this.ws.clear();
     //let code = "void setup() {} void loop() {}";
     //let area= <HTMLInputElement>document.getElementById('code')!;

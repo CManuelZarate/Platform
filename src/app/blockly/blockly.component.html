@@ -14,10 +14,14 @@ function renderContent() {
 
 <div class="container mt-5" >
   <div class="row app-container">
+    <div id="ayuda" style="display: none;">
+      <h3>AYUDAS</h3>
+    </div>
     <div id="blocklyDiv"  class="col-8"></div>
     <textarea id="code" class="col-4">aaaaaaaa</textarea>
   </div>
   <div class="row">
+    <button (click)="cargarAyuda()"> Dudas? </button>
     <button (click)="uploadClick()"> cargar </button>
     <button (click)="resetClick()"> reset workspace </button>
     <button (click)="saveArduino()"> guardar codigo arduino </button>

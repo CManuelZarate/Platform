@@ -29,12 +29,16 @@ declare var hola:any;
 })
 export class BlocklyComponent implements OnInit {
 
-  constructor() { }
+  constructor() {console.log("el obk en cons",this.obj);
+   }
   //ws:any; //espacio de trabajo
   ws:Blockly.Workspace | any; //espacio de trabajo
-  path:string = ''
+  path:string = '';
+  bloqueSeleccionado:any ={};//definir luego
+  obj:any = {a:"asd"};
   ngOnInit(): void {
-
+    this.obj={z:"asdasd"};
+    console.log("el obj en init",this.obj);
     /* let body =  document.body;
     let script = document.createElement('script');
     script.innerHTML = '';
@@ -82,23 +86,66 @@ export class BlocklyComponent implements OnInit {
     area.value = code;
     //Blockly.Arduino.workspaceToCode(workspace);
     //Arduino.workspaceToCode();
-    //console.log(Blockly.WorkspaceComment.prototype);    
+    //console.log(Blockly.WorkspaceComment.prototype);
+    
+    if(!Blockly.selected){
+      const ayuda = document.getElementById("ayuda")!;
+      const blockly = document.getElementById("blocklyDiv")!;
+      const code = document.getElementById("code")!;
+      ayuda.style.display="none";
+      //ayuda.classList.add("col-4");
+      blockly.classList.replace("col-6","col-8");
+      code.classList.replace("col-3","col-4");
+    }
+  }
+
+  cargarAyuda(){
+    console.log("el bloqe se",Blockly.selected);
+    
+    if(Blockly.selected){
+      const ayuda = document.getElementById("ayuda")!;
+      const blockly = document.getElementById("blocklyDiv")!;
+      const code = document.getElementById("code")!;
+      ayuda.style.display="block";
+      ayuda.classList.add("col-3");
+      blockly.classList.replace("col-8","col-6");
+      code.classList.replace("col-4","col-3");
+    }else{
+      console.log("seleccione un bloque para q se muestre la ayuda de el");
+    }
   }
 
 
   actualizar(){
+    
+    //console.log(this.obj);
+    
     console.log("entro actualizar");
     console.log("el ws en el actualizar es ", Blockly.getMainWorkspace().getAllBlocks(true));
-    console.log("el id del bloque seleccionado es  ", Blockly.selected);//obtengo el id del bloque seleccionado
-    let bloque =Blockly.getMainWorkspace().getBlockById(Blockly.selected.id);
-    //Blockly.Comment.drawIcon_(bloque);
-    bloque.inputList[2].setVisible(true);
-    bloque.inputList[3].setVisible(true);
+    console.log("el bloque seleccionado es  ", Blockly.selected);//obtengo el id del bloque seleccionado
+    let sele=Blockly.selected;
+    //this.bloqueSeleccionado = sele;
+    //this.bloqueSeleccionado = Blockly.selected;
+    //let bloqueSI=Blockly.getMainWorkspace().getBlockById(Blockly.selected.id);
+    console.log("el tipo es ;:",typeof sele);
     
-    bloque.commentModel.pinned=true;
-    bloque.commentModel.text="gaaaaaa";
-    console.log("modelo",bloque.commentModel);
-    console.log("get comment text",bloque.getCommentText());
+    
+
+/* no funca esto
+    this.bloqueSeleccionado =Blockly.getMainWorkspace().getBlockById(Blockly.selected.id);
+    console.log("elboc",Blockly.getMainWorkspace().getBlockById(Blockly.selected.id)); */
+
+
+    //console.log("elboc",this.bloqueSeleccionado);
+    
+    //Blockly.Comment.drawIcon_(bloque);
+    //bloque.inputList[2].setVisible(true);
+    //bloque.inputList[3].setVisible(true);
+    
+    /* this.bloqueSeleccionado.commentModel.pinned=true;
+    this.bloqueSeleccionado.commentModel.text="gaaaaaa";
+    console.log("modelo",this.bloqueSeleccionado.commentModel);
+    console.log("get comment text",this.bloqueSeleccionado.getCommentText()); */
      
     /**no entiendo por q el this.ws no funca*/
 

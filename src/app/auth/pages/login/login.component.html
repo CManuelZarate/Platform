@@ -1,0 +1,35 @@
+<section class="my-auto">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto">
+        <div class="card">
+            <div class="card-header text-center">
+                <!-- <i class="fas fa-user user-icon"></i> -->
+                <img src="../../../../assets/images/login-escudo.png" alt="escudo" class="img-esc mt-4">
+                <h4 class="mt-4">Bienvenidos</h4>
+            </div>
+            <div class="card-body">
+                <form autocomplete="off"
+                      [formGroup]="miFormulario"
+                      (ngSubmit)="login()">
+                    <div class="form-group">
+                        <input type="email"
+                        formControlName="email" id="email" class="form-control bg-secondary bg-opacity-25 mt-4" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" formControlName="password" id="password" class="form-control bg-secondary bg-opacity-25 mt-3" placeholder="Contraseña">
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" 
+                              class="btn btn-primary w-75 mt-3"
+                              [disabled]="miFormulario.invalid"> Ingresar</button>
+                      <span class="d-block mt-4"> ¿No tienes cuenta? </span>
+                      <a routerLink="/auth/registro" > Crear una aquí </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>

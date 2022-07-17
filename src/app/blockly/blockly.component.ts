@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 //import * as Blockly from 'blockly';
 import { a, jsonTools, xmlTools } from '../utils';
-import { saveAs } from 'file-saver';
+
+import { saveAs } from 'file-saver';//para insatalarlo son 2 instalaciones
+//import * as fileSaver from 'file-saver';
+
 //import Blockly from 'blockly';
 //import * as Blockly from '';
 

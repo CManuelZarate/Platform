@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Puntos</th>
+      <th scope="col">Medalla</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alumno of alumnos; let i =index" class="align-items-center">
+      <th class="align-items-center">{{i+1}}</th>
+      <td>{{alumno.name}} {{alumno.lastname}}</td>
+      <td>{{alumno.points}} </td>
+      <td> <img src= {{alumno.medalla}} alt="" width="50px" height="50px"></td>
+    </tr>
+  </tbody>
+</table>

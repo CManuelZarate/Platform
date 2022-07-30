@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
+import { MenuComponent } from './shared/menu/menu.component';
 
 const routes:Routes =[
   {
@@ -10,6 +11,12 @@ const routes:Routes =[
   {
     path: 'application',
     loadChildren: () => import ('./protected/protected.module').then(m => m.ProtectedModule)//,
+    //canActivate: [ ValidarTokenGuard ],
+    //canLoad: [ ValidarTokenGuard ]
+  },
+  {
+    // loadChildren: () => import ('./shared/shared.module').then(m => m.SharedModule)//,
+    path: 'menuentrada', component: MenuComponent
     //canActivate: [ ValidarTokenGuard ],
     //canLoad: [ ValidarTokenGuard ]
   },

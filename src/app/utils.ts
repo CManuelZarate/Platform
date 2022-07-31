@@ -169,11 +169,8 @@ export const a={
             "contents":[
                 {
                     "kind":"block",
-                    "type":"controls_if"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_compare"
+                    "type":"logic_compare",
+                    "comment":"asdas"
                 },
                 {
                     "kind":"block",
@@ -193,27 +190,201 @@ export const a={
             "kind":"category",
             "name":"Control",
             "contents":[
-                {
-                    "kind":"block",
-                    "type":"base_delay"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_compare"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_operation"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_negate"
-                },
-                {
-                    "kind":"block",
-                    "type":"logic_null"
-                },
+              {
+                "kind": "block",
+                "type": "base_delay",
+                "contents": [
+                  {
+                    "kind": "block",
+                    "type": "math_number"
+                  },
+                ]
+              },
+              {
+                "kind": "block",
+                "type": "controls_if"
+              },
+              {
+                "kind": "block",
+                "type": "controls_for"
+              },
+              {
+                "kind": "block",
+                "type": "controls_whileUntil"
+              },
             ]
+        },
+        {
+          "kind":"category",
+          "name":"Matematica",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "math_number"
+              },
+              {
+                "kind": "block",
+                "type": "math_arithmetic"
+              },
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Text",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "text"
+              },
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Input/Output",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "inout_highlow"
+              },
+              {
+                "kind": "block",
+                "type": "inout_digital_write"
+              },
+              {
+                "kind": "block",
+                "type": "inout_digital_read"
+              },
+              {
+                "kind": "block",
+                "type": "inout_analog_write"
+              },
+              {
+                "kind": "block",
+                "type": "inout_analog_read"
+              },
+              {
+                "kind": "block",
+                "type": "serial_print"
+              },
+              {
+                "kind": "block",
+                "type": "inout_tone"
+              },
+              {
+                "kind": "block",
+                "type": "inout_notone"
+              },
+              {
+                "kind": "block",
+                "type": "inout_buildin_led"
+              },
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Servo",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "servo_move"
+              },
+              {
+                "kind": "block",
+                "type": "servo_read_degrees"
+              }
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Grove Analog",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "grove_rotary_angle"
+              },
+              {
+                "kind": "block",
+                "type": "grove_temporature_sensor"
+              },
+              {
+                "kind": "block",
+                "type": "grove_sound_sensor"
+              },
+              {
+                "kind": "block",
+                "type": "grove_thumb_joystick"
+              }
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Grove",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "grove_led"
+              },
+              {
+                "kind": "block",
+                "type": "grove_button"
+              },
+              {
+                "kind": "block",
+                "type": "grove_relay"
+              },
+              {
+                "kind": "block",
+                "type": "grove_tilt_switch"
+              },
+              {
+                "kind": "block",
+                "type": "grove_piezo_buzzer"
+              },
+              {
+                "kind": "block",
+                "type": "grove_pir_motion_sensor"
+              },
+              {
+                "kind": "block",
+                "type": "grove_line_finder"
+              },
+              {
+                "kind": "block",
+                "type": "grove_rgb_led"
+              },
+              {
+                "kind": "block",
+                "type": "grove_ultrasonic_ranger"
+              }
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Grove LCD",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "grove_serial_lcd_print"
+              },
+              {
+                "kind": "block",
+                "type": "grove_serial_lcd_power"
+              },
+              {
+                "kind": "block",
+                "type": "grove_serial_lcd_effect"
+              }
+          ]
+        },
+        {
+          "kind":"category",
+          "name":"Grove motor",
+          "contents":[
+              {
+                "kind": "block",
+                "type": "grove_motor_shield"
+              }
+          ]
         },
     ]
 }

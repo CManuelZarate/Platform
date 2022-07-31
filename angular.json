@@ -30,7 +30,16 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/blockly/arduino.js",
+              "src/app/Elementos/blockly_compressed.js",
+              "src/app/Elementos/blocks_compressed.js",
+              "src/app/Elementos/arduino_compressed.js",
+              "src/app/Elementos/Blob.js",
+              "src/app/Elementos/spin.js",
+              "src/app/Elementos/FileSaver.min.js",
+              "src/app/Elementos/blockly_helper.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +102,16 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/blockly/arduino.js",
+              "src/app/Elementos/blockly_compressed.js",
+              "src/app/Elementos/blocks_compressed.js",
+              "src/app/Elementos/arduino_compressed.js",
+              "src/app/Elementos/Blob.js",
+              "src/app/Elementos/spin.js",
+              "src/app/Elementos/FileSaver.min.js",
+              "src/app/Elementos/blockly_helper.js"
+            ]
           }
         },
         "lint": {

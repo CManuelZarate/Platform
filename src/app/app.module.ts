@@ -7,6 +7,7 @@ import { BlocklyComponent } from './blockly/blockly.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+//import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     SharedModule
+    //FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,6 +14,9 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     BlocklyComponent
   ],
+  /* exports:[
+    BlocklyComponent
+  ], */
   imports: [
     BrowserModule,
     AppRoutingModule,

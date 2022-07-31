@@ -10,6 +10,7 @@ import { RetosComponent } from './alumno/retos/retos.component';
 import { MaterialesComponent } from './alumno/materiales/materiales.component';
 import { MicroaprendizajeComponent } from './alumno/microaprendizaje/microaprendizaje.component';
 import { ProgramarComponent } from './alumno/programar/programar.component';
+import { AppModule } from '../app.module';
 
 
 @NgModule({

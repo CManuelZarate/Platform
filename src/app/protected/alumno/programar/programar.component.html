@@ -1,1 +1,37 @@
-<p>programar works!</p>
+
+<!-- <script type="text/javascript" src="./app/Elementos/arduino_compressed.js"></script> -->
+
+
+<!-- <script>
+function renderContent() {
+  //var arduinoTextarea = document.getElementById('content_arduino');
+  console.log("el render");
+  var arduinoTextarea = document.getElementById('code');
+  arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
+  arduinoTextarea.focus();
+}
+</script> -->
+
+<div class="container mt-5" >
+  <div class="row app-container">
+    <div id="ayuda" style="display: none;">
+      <h3>AYUDAS</h3>
+    </div>
+    <div id="blocklyDiv"  class="col-8"></div>
+    <textarea id="code" class="col-4">aaaaaaaa</textarea>
+  </div>
+  <div class="row">
+    <button (click)="cargarAyuda()"> Dudas? </button>
+    <button (click)="uploadClick()"> cargar </button>
+    <button (click)="resetClick()"> reset workspace </button>
+    <button (click)="saveArduino()"> guardar codigo arduino </button>
+    <button (click)="save()"> guardar codigo xml </button>
+    <button id="fakeload"> cargar codigo xml </button>
+    <input (click)="cargar()"  type="file" id="load"/>
+  </div>
+  <!-- <div class="row">
+    <div id="blocklyDiv" class="col-6"></div>
+    <div id="code" class="col-6">aaaaaaaa</div>
+  </div> -->
+
+</div>

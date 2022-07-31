@@ -8,6 +8,7 @@ import { Alumno } from '../../alumno/interfaces/alumno.interface';
 })
 export class MainComponent implements OnInit {
 
+  blocklyModule:boolean = true;
   name:string = "Carlos";
   lastname:string = "Zarate";
   grade:string = "4to";
@@ -76,6 +77,10 @@ export class MainComponent implements OnInit {
       
     }
 
+  }
+
+  mostrarMenu(resp:boolean){
+    this.blocklyModule =resp;
   }
 
 }

@@ -30,7 +30,11 @@ declare var hola:any;
 })
 export class ProgramarComponent implements OnInit {
 
+  verReto:boolean =false;
+  verCodigo:boolean =true;
+
   constructor() {console.log("el obk en cons",this.obj);
+
    }
   //ws:any; //espacio de trabajo
   ws:Blockly.Workspace | any; //espacio de trabajo
@@ -95,8 +99,8 @@ export class ProgramarComponent implements OnInit {
       const code = document.getElementById("code")!;
       ayuda.style.display="none";
       //ayuda.classList.add("col-4");
-      blockly.classList.replace("col-6","col-8");
-      code.classList.replace("col-3","col-4");
+      blockly.classList.replace("col-6","col-9");
+      code.classList.replace("col-3","col-3");
     }
   }
 
@@ -109,8 +113,8 @@ export class ProgramarComponent implements OnInit {
       const code = document.getElementById("code")!;
       ayuda.style.display="block";
       ayuda.classList.add("col-3");
-      blockly.classList.replace("col-8","col-6");
-      code.classList.replace("col-4","col-3");
+      blockly.classList.replace("col-9","col-6");
+      code.classList.replace("col-3","col-3");
     }else{
       console.log("seleccione un bloque para q se muestre la ayuda de el");
     }
@@ -302,6 +306,21 @@ export class ProgramarComponent implements OnInit {
 
   serializar(){
     //let json = Blockly.serialization.workspaces.save.workspaceToCode(this.ws);
+  }
+
+  radioBtn(e:any){
+    console.log(e.target.id);
+    if(e.target.id =="reto"){
+      this.verReto =true;
+      this.verCodigo =false;
+      /* document.getElementById("code")!.style.display="none";
+      document.getElementById("reto")!.style.display="block"; */
+    }else{
+      this.verReto =false;
+      this.verCodigo =true;
+      /* document.getElementById("code")!.style.display="block";
+      document.getElementById("reto")!.style.display="none"; */
+    }
   }
 
 }

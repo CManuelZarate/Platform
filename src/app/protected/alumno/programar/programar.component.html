@@ -12,23 +12,47 @@ function renderContent() {
 }
 </script> -->
 
-<div class="container mt-5" >
-  <div class="row app-container">
-    <div id="ayuda" style="display: none;">
-      <h3>AYUDAS</h3>
-    </div>
-    <div id="blocklyDiv"  class="col-8"></div>
-    <textarea id="code" class="col-4">aaaaaaaa</textarea>
-  </div>
+<div class="container mt-2" >
   <div class="row">
-    <button (click)="cargarAyuda()"> Dudas? </button>
-    <button (click)="uploadClick()"> cargar </button>
-    <button (click)="resetClick()"> reset workspace </button>
-    <button (click)="saveArduino()"> guardar codigo arduino </button>
-    <button (click)="save()"> guardar codigo xml </button>
-    <button id="fakeload"> cargar codigo xml </button>
-    <input (click)="cargar()"  type="file" id="load"/>
+    <div class="d-flex justify-content-around mb-2 py-3 options">
+      <button class="rounded-pill p-2" (click)="cargarAyuda()"> Dudas? </button>
+      <button class="rounded-pill p-2" (click)="uploadClick()"> cargar </button>
+      <button class="rounded-pill p-2" (click)="resetClick()"> reset workspace </button>
+      <button class="rounded-pill p-2" (click)="saveArduino()"> guardar codigo arduino </button>
+      <button class="rounded-pill p-2" (click)="save()"> guardar codigo xml </button>
+      <div>
+        <label for="load">Cargar codigo xml</label>
+        <input (click)="cargar()" class="rounded-pill p-2"  type="file" id="load"/>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input (click)="radioBtn($event)" type="radio" class="btn-check" name="btnradio" id="reto" autocomplete="off" >
+        <label class="btn btn-outline-primary" for="reto">Reto</label>
+      
+        <input (click)="radioBtn($event)" type="radio" class="btn-check" name="btnradio" id="codigo" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="codigo">Codigo</label>
+      
+      </div>
+
+    </div>
+    <div class="row mt-2 app-container">
+      <div id="ayuda" style="display: none;">
+        <h3>AYUDAS</h3>
+      </div>
+      <div id="blocklyDiv"  class="col-9"></div>
+      <textarea  id="code" class="col-3"></textarea>
+      <!-- <div id="reto">
+        <div class="resultado">
+
+        </div>
+        <div class="descripcion">
+
+        </div>
+      </div> -->
+    </div>
+
   </div>
+  
   <!-- <div class="row">
     <div id="blocklyDiv" class="col-6"></div>
     <div id="code" class="col-6">aaaaaaaa</div>

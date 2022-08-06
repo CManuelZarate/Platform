@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  @Output() onProgramar = new EventEmitter<boolean>();
 
   constructor(private router:Router) { }
 
@@ -28,7 +27,6 @@ export class MenuComponent implements OnInit {
     this.router.navigateByUrl('application/alumno/microaprendizaje');
   }
   programar(){
-    this.onProgramar.emit(false);
     this.router.navigateByUrl('application/alumno/programar');
   }
 

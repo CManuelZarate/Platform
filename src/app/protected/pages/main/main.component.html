@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div *ngIf="blocklyModule" class="col-3 p-0">
-      <app-menu (onProgramar)="mostrarMenu($event)"></app-menu>
+      <app-menu></app-menu>
     </div>
     <div [ngClass]="blocklyModule? 'col-9' : 'col-12' " class=" p-0">
       <router-outlet></router-outlet>

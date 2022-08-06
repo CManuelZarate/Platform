@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit, SimpleChanges } from '@angular/core';
 import { Alumno } from '../../alumno/interfaces/alumno.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, DoCheck {
 
   blocklyModule:boolean = true;
   name:string = "Carlos";
@@ -48,8 +49,17 @@ export class MainComponent implements OnInit {
   ]
   alumnosTabla:Alumno[][]=[];
 
-  constructor() { 
+  constructor(private router:Router) {
     this.alumnosPag();
+  }
+  
+  ngDoCheck(): void {
+    if(this.router.url === "/application/alumno/programar" ){
+      console.log(this.router.url);
+      this.blocklyModule = false;
+    }else{
+      this.blocklyModule = true;
+    }
   }
 
   ngOnInit(): void {
@@ -77,10 +87,6 @@ export class MainComponent implements OnInit {
       
     }
 
-  }
-
-  mostrarMenu(resp:boolean){
-    this.blocklyModule =resp;
   }
 
 }

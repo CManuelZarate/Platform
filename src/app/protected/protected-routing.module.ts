@@ -6,6 +6,8 @@ import { RetosComponent } from './alumno/retos/retos.component';
 import { MaterialesComponent } from './alumno/materiales/materiales.component';
 import { MicroaprendizajeComponent } from './alumno/microaprendizaje/microaprendizaje.component';
 import { ProgramarComponent } from './alumno/programar/programar.component';
+import { DescripcionRetosComponent } from './alumno/retos/descripcion-retos/descripcion-retos.component';
+
 
 const routes: Routes = [
   {
@@ -14,9 +16,9 @@ const routes: Routes = [
     children:[
       {path:'alumno/dashboard',component:DashboardComponent},
       {path:'alumno/retos',component:RetosComponent},
-      /* {path:'alumno/retos/descripcion',component:}, */
-      {path:'alumno/materiales',component:MaterialesComponent},
-      /* {path:'alumno/materiales/videos',component:},
+      {path:'alumno/retos/descripcion',component:DescripcionRetosComponent},
+      /*{path:'alumno/materiales',component:MaterialesComponent},
+       {path:'alumno/materiales/videos',component:},
       {path:'alumno/materiales/enlaces',component:},
       {path:'alumno/materiales/guias',component:},
       {path:'alumno/materiales/usoPlataforma',component:}, */

@@ -1,0 +1,4 @@
+.breadcrumb-item + .breadcrumb-item::before{
+  color: rgba(9, 62, 206, 0.973);
+  content: "->";
+}

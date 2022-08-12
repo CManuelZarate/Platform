@@ -1,0 +1,24 @@
+.container img {
+  inline-size: 100%;
+}
+
+/* .col-8,.col-4{
+    border:10px solid transparent;
+} */
+
+
+div[class^="col"] {
+  border-top:20px solid transparent;
+  text-align: left;
+}
+/*
+#buttonReto{
+  text-align: right;
+} */
+
+#button{
+  position: relative;
+  top: 120px;
+  left: 80pX;
+  /* right: 30px; */
+}

@@ -11,10 +11,11 @@ import { MaterialesComponent } from './alumno/materiales/materiales.component';
 import { MicroaprendizajeComponent } from './alumno/microaprendizaje/microaprendizaje.component';
 import { ProgramarComponent } from './alumno/programar/programar.component';
 import { AppModule } from '../app.module';
+import { DescripcionRetosComponent } from './alumno/retos/descripcion-retos/descripcion-retos.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, RetosComponent, MaterialesComponent, MicroaprendizajeComponent, ProgramarComponent],
+  declarations: [DashboardComponent, MainComponent, RetosComponent, MaterialesComponent, MicroaprendizajeComponent, ProgramarComponent, DescripcionRetosComponent],
   imports: [
     CommonModule,
     ProtectedRoutingModule,

@@ -21,7 +21,7 @@ function renderContent() {
       <button class="rounded-pill p-2" (click)="saveArduino()"> guardar codigo arduino </button>
       <button class="rounded-pill p-2" (click)="save()"> guardar codigo xml </button>
       <div>
-        <label for="load">Cargar codigo xml</label>
+        <button id="fakeload"> cargar codigo xml </button>
         <input (click)="cargar()" class="rounded-pill p-2"  type="file" id="load"/>
       </div>
 
@@ -40,15 +40,17 @@ function renderContent() {
         <h3>AYUDAS</h3>
       </div>
       <div id="blocklyDiv"  class="col-9"></div>
-      <textarea  id="code" class="col-3"></textarea>
-      <!-- <div id="reto">
-        <div class="resultado">
-
+      <textarea *ngIf="verCodigo" id="code" class="col-3"></textarea>
+      <div *ngIf="verReto" class="col-3">
+        <div id="reto">
+          <div class="resultado">
+            asdas
+          </div>
+          <div class="descripcion">
+  
+          </div>
         </div>
-        <div class="descripcion">
-
-        </div>
-      </div> -->
+      </div>
     </div>
 
   </div>

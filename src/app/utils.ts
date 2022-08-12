@@ -184,8 +184,17 @@ export const a={
                     "kind":"block",
                     "type":"logic_null"
                 },
+                {
+                    "kind":"block",
+                    "type":"logic_boolean"
+                },
             ]
         },
+        /* {
+          "kind":"category",
+          "name":"Variables",
+          "custom":"VARIABLE"
+        }, */
         {
             "kind":"category",
             "name":"Control",
@@ -204,6 +213,10 @@ export const a={
                 "kind": "block",
                 "type": "controls_if"
               },
+/*               {
+                "kind": "block",
+                "type": "controls_if_else"
+              }, */
               {
                 "kind": "block",
                 "type": "controls_for"

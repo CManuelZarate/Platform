@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 
 //import * as Blockly from 'blockly';
 import { a, jsonTools, xmlTools } from '../../../utils';
@@ -28,20 +28,43 @@ declare var hola:any;
   templateUrl: './programar.component.html',
   styleUrls: ['./programar.component.css']
 })
-export class ProgramarComponent implements OnInit {
+export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked {
 
   verReto:boolean =false;
   verCodigo:boolean =true;
 
   constructor() {console.log("el obk en cons",this.obj);
+  let area= <HTMLInputElement>document.getElementById('code')!;
+  console.log("el area en el CONSTRUCTO es",area);}
+  
+  ngAfterViewChecked() {
+    let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
+    let area= <HTMLInputElement>document.getElementById('code')!;
+    console.log("el area en el NGDOCHECK es",area);
+    if(area){
+      area.value = code;
+    }
+  }
 
-   }
+
+  ngAfterViewInit() {
+    if(this.verCodigo){
+      let area= <HTMLInputElement>document.getElementById('code')!;
+      console.log("NG AFTERVIEWINIT",area);
+      
+      area.value = this.codeWs;
+    }
+    
+  }
   //ws:any; //espacio de trabajo
   ws:Blockly.Workspace | any; //espacio de trabajo
   path:string = '';
   bloqueSeleccionado:any ={};//definir luego
   obj:any = {a:"asd"};
+  codeWs:any;
   ngOnInit(): void {
+    let area= <HTMLInputElement>document.getElementById('code')!;
+    console.log("el area en el ONINIT es",area);
     this.obj={z:"asdasd"};
     console.log("el obj en init",this.obj);
     /* let body =  document.body;
@@ -83,12 +106,16 @@ export class ProgramarComponent implements OnInit {
   }
 
   ngDoCheck(): void {
+    //this.codeWs = (Blockly as any).Arduino.workspaceToCode(this.ws);
     let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
     //let code = Blockly.Arduino.workspaceToCode(this.ws);
     //let code = (Blockly as any).JavaScript.workspaceToCode(this.ws);
     //console.log(code);
     let area= <HTMLInputElement>document.getElementById('code')!;
-    area.value = code;
+    console.log("el area en el NGDOCHECK es",area);
+    if(area){
+      area.value = code;
+    }
     //Blockly.Arduino.workspaceToCode(workspace);
     //Arduino.workspaceToCode();
     //console.log(Blockly.WorkspaceComment.prototype);
@@ -100,7 +127,7 @@ export class ProgramarComponent implements OnInit {
       ayuda.style.display="none";
       //ayuda.classList.add("col-4");
       blockly.classList.replace("col-6","col-9");
-      code.classList.replace("col-3","col-3");
+      if(code){code.classList.replace("col-3","col-3");}
     }
   }
 

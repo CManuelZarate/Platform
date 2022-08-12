@@ -12,10 +12,11 @@ import { MicroaprendizajeComponent } from './alumno/microaprendizaje/microaprend
 import { ProgramarComponent } from './alumno/programar/programar.component';
 import { AppModule } from '../app.module';
 import { DescripcionRetosComponent } from './alumno/retos/descripcion-retos/descripcion-retos.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, RetosComponent, MaterialesComponent, MicroaprendizajeComponent, ProgramarComponent, DescripcionRetosComponent],
+  declarations: [DashboardComponent, MainComponent, RetosComponent, MaterialesComponent, MicroaprendizajeComponent, ProgramarComponent, DescripcionRetosComponent,SafePipe],
   imports: [
     CommonModule,
     ProtectedRoutingModule,

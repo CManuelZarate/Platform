@@ -1,7 +1,7 @@
 import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 
 //import * as Blockly from 'blockly';
-import { a, jsonTools, xmlTools } from '../../../utils';
+import { a, jsonTools, reto1, xmlTools } from '../../../utils';
 
 import { saveAs } from 'file-saver';//para insatalarlo son 2 instalaciones
 //import * as fileSaver from 'file-saver';
@@ -32,6 +32,8 @@ export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked
 
   verReto:boolean =false;
   verCodigo:boolean =true;
+  descripcionReto:string=reto1['descripcion-complete'];
+  urlReto:string=reto1['url-vid'] || 'https://www.youtube.com/embed/i3Llvd5qHZM';
 
   constructor() {console.log("el obk en cons",this.obj);
   let area= <HTMLInputElement>document.getElementById('code')!;

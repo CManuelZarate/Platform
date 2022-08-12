@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-retos',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RetosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  descripcion(){
+    this.router.navigateByUrl('application/alumno/retos/descripcion');
   }
 
 }

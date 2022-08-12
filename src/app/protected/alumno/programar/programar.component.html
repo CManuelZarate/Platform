@@ -43,11 +43,11 @@ function renderContent() {
       <textarea *ngIf="verCodigo" id="code" class="col-3"></textarea>
       <div *ngIf="verReto" class="col-3">
         <div id="reto">
-          <div class="resultado">
-            asdas
+          <div class="imgResultado">
+            <iframe width="" height="315" [src]="urlReto|safe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="descripcion">
-  
+            <p>{{descripcionReto}}</p>
           </div>
         </div>
       </div>

@@ -434,3 +434,16 @@ export const jsonTools = {
       }
     ]
   };
+
+
+
+/****** EXPLORAR RETOS*/
+export const reto1={
+  "titulo":"Semáforo inteligente",
+  "descripcion-card":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.",
+
+  "descripcion-complete":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. ",
+
+  "url-vid":"https://www.youtube.com/embed/i3Llvd5qHZM"
+
+}

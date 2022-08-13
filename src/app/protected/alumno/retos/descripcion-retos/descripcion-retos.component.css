@@ -3,7 +3,7 @@
 }
 
 /* .col-8,.col-4{
-    border:10px solid transparent;
+    border:1px solid black;
 } */
 
 
@@ -21,4 +21,9 @@ div[class^="col"] {
   top: 120px;
   left: 80pX;
   /* right: 30px; */
+}
+
+
+.contenedor{
+  height: 370px;
 }

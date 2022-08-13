@@ -3,23 +3,28 @@ export const arrRetos =[
     id:1,
     type:"Reto",
     tittle:"Semáforo para el control de la calle",
-    short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica que se pueden necesitar y manejo de conceptos de programación",
+    short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica como leds y resistores que se pueden necesitar y manejo de conceptos de programación",
     description:"Para este reto...."
   },
   {
     id:2,
     type:"Reto",
     tittle:"Tacho de Basura inteligente",
-    short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica que se pueden necesitar y manejo de conceptos de programación",
+    short_description:"Este reto consiste en ayudar con el manejo del medio ambiente y evitar el contacto con los desechos, aplicar elementos de motor y manejo de conceptos de programación para graduar el giro de un servomotor",
     description:"Para este reto...."
   },
   {
     id:3,
     type:"Reto",
-    tittle:"Grúa robótica graduada",
+    tittle:"Desarrollar una grúa robótica graduada",
     short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica que se pueden necesitar y manejo de conceptos de programación",
     description:"Para este reto...."
   },
+]
+
+
+export const blockly_id=[
+  "inout_digital_write","base_delay","math_number"
 ]
 
 
@@ -467,7 +472,14 @@ export const reto1={
   "titulo":"Semáforo inteligente",
   "descripcion-card":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.",
 
-  "descripcion-complete":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.Iste.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. ",
+  "descripcion-complete":`Sugerencia para el desarrollo del reto:
+
+  1) Puede utilizar 3 leds de distintos colores para realizar la demostración y no confundirse.
+
+  2) Usar cables de distincos colores para identificar los diferenctes pins del arduino.
+  
+  3)Recordar que el codigo generado se ejecuta permanentemente.
+  `,
 
   "url-vid":"https://www.youtube.com/embed/i3Llvd5qHZM"
 

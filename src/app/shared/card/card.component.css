@@ -21,4 +21,10 @@
   background:url("../../../assets/images/portada.png") ;
   background-size:cover;
   background-repeat: no-repeat;
+  /*opacity: 0.5;*/
+}
+
+.title{
+  background:hsla(0, 0%, 100%, 0.507);
+  font-weight: bold;
 }

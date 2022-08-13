@@ -112,7 +112,7 @@ export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked
     //let code = (Blockly as any).JavaScript.workspaceToCode(this.ws);
     //console.log(code);
     let area= <HTMLInputElement>document.getElementById('code')!;
-    console.log("el area en el NGDOCHECK es",area);
+    //console.log("el area en el NGDOCHECK es",area);
     if(area){
       area.value = code;
     }
@@ -155,11 +155,15 @@ export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked
     console.log("entro actualizar");
     console.log("el ws en el actualizar es ", Blockly.getMainWorkspace().getAllBlocks(true));
     console.log("el bloque seleccionado es  ", Blockly.selected);//obtengo el id del bloque seleccionado
-    let sele=Blockly.selected;
+    let sele:any=Blockly.selected;
     //this.bloqueSeleccionado = sele;
     //this.bloqueSeleccionado = Blockly.selected;
     //let bloqueSI=Blockly.getMainWorkspace().getBlockById(Blockly.selected.id);
     console.log("el tipo es ;:",typeof sele);
+    if(sele){
+      console.log("el bloque seleccionado es",sele.type);
+    }
+    
     
     
 

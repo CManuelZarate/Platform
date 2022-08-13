@@ -1,3 +1,28 @@
+export const arrRetos =[
+  {
+    id:1,
+    type:"Reto",
+    tittle:"Semáforo para el control de la calle",
+    short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica que se pueden necesitar y manejo de conceptos de programación",
+    description:"Para este reto...."
+  },
+  {
+    id:2,
+    type:"Reto",
+    tittle:"Tacho de Basura inteligente",
+    short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica que se pueden necesitar y manejo de conceptos de programación",
+    description:"Para este reto...."
+  },
+  {
+    id:3,
+    type:"Reto",
+    tittle:"Grúa robótica graduada",
+    short_description:"Este reto consiste en ayudar con el manejo del tránsito en tu comunidad, identificar elementos básicos de electronica que se pueden necesitar y manejo de conceptos de programación",
+    description:"Para este reto...."
+  },
+]
+
+
 export const xmlTools= `<xml id="toolbox" style="display: none">
   <category name="Logica">
     <block type="controls_if"></block>
@@ -442,7 +467,7 @@ export const reto1={
   "titulo":"Semáforo inteligente",
   "descripcion-card":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.",
 
-  "descripcion-complete":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. ",
+  "descripcion-complete":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste.Iste.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam fugit deleniti ipsa perspiciatis, sunt laudantium modi temporibus excepturi dignissimos quasi cum, nobis sequi totam voluptate nam nesciunt assumenda blanditiis. Iste. ",
 
   "url-vid":"https://www.youtube.com/embed/i3Llvd5qHZM"
 

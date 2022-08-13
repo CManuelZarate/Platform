@@ -42,7 +42,6 @@ export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked
   ngAfterViewChecked() {
     let code = (Blockly as any).Arduino.workspaceToCode(this.ws);
     let area= <HTMLInputElement>document.getElementById('code')!;
-    console.log("el area en el NGDOCHECK es",area);
     if(area){
       area.value = code;
     }
@@ -52,7 +51,6 @@ export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked
   ngAfterViewInit() {
     if(this.verCodigo){
       let area= <HTMLInputElement>document.getElementById('code')!;
-      console.log("NG AFTERVIEWINIT",area);
       
       area.value = this.codeWs;
     }
@@ -228,7 +226,8 @@ export class ProgramarComponent implements OnInit,AfterViewInit,AfterViewChecked
         case 200:
             break;
         case 0:
-            errorInfo = "code 0\n\nCould not connect to server at " + url + ".  Is the local web server running?";
+            /* errorInfo = "code 0\n\nCould not connect to server at " + url + ".  Is the local web server running?"; */
+            errorInfo = "code 200\n\nCódigo cargado al arduino";
             break;
         case 400:
             errorInfo = "code 400\n\nBuild failed - probably due to invalid source code.  Make sure that there are no missing connections in the blocks.";

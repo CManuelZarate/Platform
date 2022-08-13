@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { arrRetos } from '../../../utils';
 
 @Component({
   selector: 'app-retos',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./retos.component.css']
 })
 export class RetosComponent implements OnInit {
+
+  arrRetos:any = arrRetos;
 
   constructor(private router:Router) { }
 

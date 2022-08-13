@@ -3,11 +3,21 @@
 }
 
 .app-container{
-    height: 80vh;
+  height: 80vh;
 }
 
 .options{
-    background: #C4C4C4;
+  background: #C4C4C4;
+}
+
+.desborde{
+    background:#C4C4C4;
+    /* height:100px;
+    width:100px; */
+    padding: 1rem;
+    margin: 0 auto;
+    display:block;
+    overflow:auto;
 }
 /* #blocklyDiv {
     height: 100%;

@@ -19,12 +19,12 @@
     <div class="card-header" 
           [ngClass]="{fondo:state}"
           [ngClass]="{img:state}">
-      <h4 class="">{{type}} {{numberCard}} {{tittle}}</h4>
+      <h4 class="">{{objCargar['type']}} {{objCargar['id']}} {{objCargar['tittle']}}</h4>
       <!-- <img src="../../../assets/images/portada.png" alt=""> -->
     </div>
     <div class="card-body card-description">
       <h5 class="card-title">Descripción</h5>
-      <p class="card-text"> {{description}} </p>
+      <p class="card-text"> {{objCargar['short_description']}} </p>
     </div>
   </div>
 

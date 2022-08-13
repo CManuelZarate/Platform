@@ -13,14 +13,35 @@ export class DashboardComponent implements OnInit {
   grade:string = "4to";
   section:string = "C";
   email:string = "camazala@gmail.com";
-  points:number = 150;
+  points:number = 450;
   pageSelect:number =1;
 
   alumnos:Alumno[] = [
     {
       name:"carlos",
       lastname: "zarate",
+      medalla:"../../../assets/images/medalla-diamante.png",
+      logro:"../../../assets/images/trabajo-equipo.png",
+      points: 450,
+      email:"asda@asdas.com",
+      grado: "4to",
+      seccion: "C",
+    },
+    {
+      name:"Jose",
+      lastname: "Perez",
       medalla:"../../../assets/images/login-escudo.png",
+      logro:"../../../assets/images/medalla-plata.png",
+      points: 320,
+      email:"asda@asdas.com",
+      grado: "4to",
+      seccion: "C",
+    },
+    {
+      name:"carlos",
+      lastname: "zarate",
+      medalla:"../../../assets/images/login-escudo.png",
+      logro:"../../../assets/images/medalla-plata.png",
       points: 150,
       email:"asda@asdas.com",
       grado: "4to",
@@ -30,6 +51,7 @@ export class DashboardComponent implements OnInit {
       name:"carlos",
       lastname: "zarate",
       medalla:"../../../assets/images/login-escudo.png",
+      logro:"../../../assets/images/medalla-plata.png",
       points: 150,
       email:"asda@asdas.com",
       grado: "4to",
@@ -39,6 +61,17 @@ export class DashboardComponent implements OnInit {
       name:"carlos",
       lastname: "zarate",
       medalla:"../../../assets/images/login-escudo.png",
+      logro:"../../../assets/images/medalla-plata.png",
+      points: 150,
+      email:"asda@asdas.com",
+      grado: "4to",
+      seccion: "C",
+    },
+    {
+      name:"carlos",
+      lastname: "zarate",
+      medalla:"../../../assets/images/login-escudo.png",
+      logro:"../../../assets/images/medalla-plata.png",
       points: 150,
       email:"asda@asdas.com",
       grado: "4to",
@@ -70,7 +103,7 @@ export class DashboardComponent implements OnInit {
   }
 
   alumnosPag(){
-    let cantXGrupo = 1;
+    let cantXGrupo = 5;
     const residuo = (this.alumnos.length) % cantXGrupo;
     let numGrupos= Math.floor(this.alumnos.length/cantXGrupo);
     if(residuo !== 0 ){

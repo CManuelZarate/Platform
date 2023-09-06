@@ -25,9 +25,9 @@ export class AuthService {
     const url =`${this.baseUrl}/auth`;
     const body = {email,password};
 
-    return of(true);
+    //return of(true);
     
-    /* return this.http.post<AuthResponse>(url,body)
+    return this.http.post<AuthResponse>(url,body)
             .pipe(
               tap(resp => {
                 if(resp.ok){//camb info _usuai no al geter
@@ -36,6 +36,6 @@ export class AuthService {
               }),//diparo efect secundario,ejecu cod antes de los otros operadores
               map( resp => resp.ok ),//op q permite mutar la resp
               catchError(err => of(err.error.msg)) //atrapamos el err,debemos reg obs y transforma con of()
-            ); */
+            );
   }
 }

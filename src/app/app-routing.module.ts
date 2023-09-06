@@ -31,7 +31,7 @@ const routes:Routes =[
   },
   {
     path: '**',
-    redirectTo: 'auth'
+    redirectTo: 'auth'//posblemente verificar si hay un tkn almacenado
   }
 ]
 

@@ -1,1 +1,96 @@
 
+<section class="my-auto">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form autocomplete="off"
+                      [formGroup]="miFormulario"
+                      (ngSubmit)="register()">
+                    <div class="mt-4">
+                        <span class="">Nombres</span>
+                        <input type="nombres"
+                        formControlName="nombres" id="nombres" class="form-control bg-secondary bg-opacity-25 " placeholder="Ingrese sus Nombres">
+                        <span class="form-text text-danger" *ngIf="isValidField('nombres')">
+                          {{ getFieldError('nombres') }}
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="">Apellidos</span>
+                        <input type="apellidos"
+                        formControlName="apellidos" id="apellidos" class="form-control bg-secondary bg-opacity-25" placeholder="Ingrese sus Apellidos">
+                        <span class="form-text text-danger" *ngIf="isValidField('apellidos')">
+                          {{ getFieldError('apellidos') }}
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="">Correo Electrónico</span><br>
+                       <!--  <span class="">formpending : {{miFormulario.pending}}</span><br>
+                        <span class="">forminvalid : {{miFormulario.invalid}}</span><br>
+                        <span class="">formvalidemail : {{miFormulario.controls['email'].valid}}</span> -->
+                        <input type="email" (change)="ver()"
+                        formControlName="email" id="email" class="form-control bg-secondary bg-opacity-25" placeholder="Email">
+                        <span class="form-text text-danger" *ngIf="isValidField('email')">
+                          {{ getFieldError('email') }}
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="">Celular</span>
+                        <input
+                        formControlName="cellphone" id="cellphone" class="form-control bg-secondary bg-opacity-25" placeholder="celular">
+                        <span class="form-text text-danger" *ngIf="isValidField('cellphone')">
+                          {{ getFieldError('cellphone') }}
+                        </span>
+                    </div>
+                    <div class="mt-3">
+                        <span class="">Contraseña</span>
+                        <input type="password" formControlName="password" id="password" class="form-control bg-secondary bg-opacity-25 " placeholder="Contraseña">
+                        <span class="form-text text-danger" *ngIf="isValidField('password')">
+                          {{ getFieldError('password') }}
+                        </span>
+                    </div>
+                    <div class="mt-3">
+                        <span class="">Confirmar Contraseña</span>
+                        <input type="password" formControlName="password2" id="password2" class="form-control bg-secondary bg-opacity-25 " placeholder="Confirmar Contraseña">
+                        <span class="form-text text-danger" *ngIf="isValidField('password2')">
+                          {{ getFieldError('password2') }}
+                        </span>
+                    </div>
+                    <div class="mt-4">
+                      <span class="">Ingresar como :</span>
+                      <select  (change)="inputByRole()" class="form-select bg-secondary bg-opacity-25" formControlName="role" id="role">
+                        <option value="alumno">Alumno</option>
+                        <option value="docente">Docente</option>
+                      </select>
+                    </div>
+                    <!-- <div *ngIf="role == 'alumno' "> -->
+                    <div *ngIf="miFormulario.value.role =='alumno' ">
+                      <div class="mt-3">
+                        <span class="">Grado</span>
+                        <input type="number" min="1" max="5" formControlName="grade" id="grade" class="form-control bg-secondary bg-opacity-25 " placeholder="grado">
+                        <span class="form-text text-danger" *ngIf="isValidField('grade')">
+                          {{ getFieldError('grade') }}
+                        </span>
+                      </div>
+                      <div class="mt-3">
+                        <span class="">Sección</span>
+                        <input formControlName="section" id="section" class="form-control bg-secondary bg-opacity-25 " placeholder="Sección">
+                        <span class="form-text text-danger" *ngIf="isValidField('section')">
+                          {{ getFieldError('section') }}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" 
+                              class="btn btn-primary w-75 mt-3"
+                              [disabled]="miFormulario.invalid || miFormulario.pending"> Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>

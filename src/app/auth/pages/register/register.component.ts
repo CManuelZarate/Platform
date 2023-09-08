@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 //import { validateCellphone } from 'src/app/shared/validators/validators.functions';
 import * as customValidators from 'src/app/shared/validators/validators.functions';
@@ -77,12 +78,27 @@ export class RegisterComponent{
   ver(){
     console.log(this.miFormulario);
   }
+
   register(){
+    //si es invalido marcamos los campos como si hubiesen sido tocados
     if(this.miFormulario.invalid){
       this.miFormulario.markAllAsTouched();
       return;
     }
-    //this.miFormulario.reset();
+
+    const {name,email,password} = this.miFormulario.value;
+
+    this.authService.registro(name,email,password)
+        .subscribe( ok => {
+          console.log(ok);
+          if(ok === true){
+            this.router.navigateByUrl('/auth');
+          }else{
+            Swal.fire('Error',ok, 'error');
+          }
+        });
+
+    this.miFormulario.reset();
   }
 
   inputByRole(){

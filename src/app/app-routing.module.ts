@@ -13,9 +13,9 @@ const routes:Routes =[
   },
   {
     path: 'application',
-    loadChildren: () => import ('./protected/protected.module').then(m => m.ProtectedModule)//,
-    //canActivate: [ ValidarTokenGuard ],
-    //canLoad: [ ValidarTokenGuard ]
+    loadChildren: () => import ('./protected/protected.module').then(m => m.ProtectedModule),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad: [ ValidarTokenGuard ]
   },
   {
     // loadChildren: () => import ('./shared/shared.module').then(m => m.SharedModule)//,

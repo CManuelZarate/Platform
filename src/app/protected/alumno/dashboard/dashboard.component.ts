@@ -16,6 +16,16 @@ export class DashboardComponent implements OnInit {
   points:number = 450;
   pageSelect:number =1;
 
+  mostrarInfo: boolean = false;
+  mostrarTooltipLogro: boolean = false;
+  posX: number = 0;
+  posY: number = 0;
+  posLogroX: number = 0;
+  posLogroY: number = 0;
+  cajaAncho: number = 0;
+  cajaLogroAncho: number = 0;
+
+
   alumnos:Alumno[] = [
     {
       name:"carlos",
@@ -97,6 +107,45 @@ export class DashboardComponent implements OnInit {
     }
   
   } */
+
+  actualizarPosicion(event: MouseEvent) {
+    this.mostrarInfo = true;
+    //para tooltip izquierda
+    let tooltipMedalla= <HTMLInputElement>document.getElementById('tooltip-medalla');
+    if(this.mostrarInfo && tooltipMedalla){
+      this.cajaAncho = tooltipMedalla.offsetWidth;
+    }
+    /* derecha
+    this.posX = event.clientX + 10;
+    this.posY = event.clientY + 10;
+    */
+    //tooltip hacia izaquierda
+    this.posX = event.clientX - this.cajaAncho - 10;
+    this.posY = event.clientY + 10;
+  }
+  actualizarPosicionLogro(event: MouseEvent) {
+    this.mostrarTooltipLogro = true;
+    //para tooltip izquierda
+    let tooltipLogro= <HTMLInputElement>document.getElementById('tooltip-logro');
+    if(this.mostrarTooltipLogro && tooltipLogro){
+      this.cajaLogroAncho = tooltipLogro.offsetWidth;
+    }
+    /* derecha
+    this.posX = event.clientX + 10;
+    this.posY = event.clientY + 10;
+    */
+    //tooltip hacia izaquierda
+    this.posLogroX = event.clientX - this.cajaLogroAncho - 10;
+    this.posLogroY = event.clientY + 10;
+  }
+
+  ocultarCaja2() {
+    this.mostrarInfo = false;
+  }
+  ocultarTooltipLogro() {
+    this.mostrarTooltipLogro = false;
+  }
+
   paginacion(pageSelect:number){
     this.pageSelect = pageSelect;
     /* ACTUALIZAR LA TABLA SEGUN LA PAGINA */

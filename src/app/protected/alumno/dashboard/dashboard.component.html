@@ -3,42 +3,93 @@
   <div class="row">
     <div class="p-3">
       
-      <div class="d-flex justify-content-around align-items-center cabecero p-4">
-        <div class="perfil">
-          <img src="../../../../assets/icons/Perfil.svg" width="100px">
+      <div class="d-flex justify-content-around align-items-center align-items-stretch cabecero p-4">
+        <div class="perfil align-self-center">
+          <img class="" src="../../../../assets/icons/Perfil.svg" width="100px">
         </div>
-        <div class="datos">
-          <div class="d-flex">
-            <p class="w-50">{{name}}  {{lastname}}</p>
-            <p  class="ml-3">{{grade}} {{section}} </p>
+        <div class="datos d-flex flex-column justify-content-around">
+          <div class="d-flex align-items-center justify-content-around">
+            <p class="w-50 me-3 mb-0">{{name}}  {{lastname}}</p>
+            <p  class="ml-3 m-0">{{grade}} {{section}} </p>
           </div>
-          <div class="d-flex">
-            <p class="w-50">{{email}}</p>
-            <img  class="ml-3" src="../../../../assets/icons/Edit.svg" alt="" width="20px">
-            <a href="">Editar Perfil  </a>
+          <div class="d-flex align-items-center justify-content-around">
+            <div class="me-3">
+              <p class="m-0">{{email}}</p>
+            </div>
+            <div class="edit-perfil align-items-center ">
+              <img  class="" src="../../../../assets/icons/Edit.svg" alt="" width="20px">
+              <a href="">Editar Perfil  </a>
+            </div>
           </div>
         </div>
         <div class="d-flex align-items-center elementos">
-          <div class="medalla p-4 border border-3">
+          <div class="medalla p-4 border border-3" 
+          (mousemove)="actualizarPosicion($event)"
+          (mouseleave)="ocultarCaja2()">
             <p>Medalla</p>
             <img [src]="alumnos[0].medalla" width="50px" alt="">
+            <div class="tooltip" id="tooltip-medalla" *ngIf="mostrarInfo" [style.top.px]="posY" [style.left.px]="posX">
+              Otras Medallas
+              <div class="d-flex align-items-center my-2">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0 ms-2">Medalla basica 200 puntos alcanzados</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+            </div>
           </div>
           <div class="puntos p-4 ">
             <p>Puntos</p>
             <p class="text-center">{{points}}</p>
           </div>
-          <div class="logro p-4 border border-3">
+          <div class="logro p-4 border border-3"
+          (mousemove)="actualizarPosicionLogro($event)"
+          (mouseleave)="ocultarTooltipLogro()">
             <p>Logros</p>
             <img [src]="alumnos[0].logro" width="50px" alt="">
+            <div class="tooltip" id="tooltip-logro" *ngIf="mostrarTooltipLogro" [style.top.px]="posLogroY" [style.left.px]="posLogroX">
+              Otros Logros
+              <div class="d-flex align-items-center my-2">
+                <img [src]="alumnos[0].logro" width="30px" alt="">
+                <p class="my-0 ms-2">Logro de Trabajo en Equipo</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+              <div class="d-flex align-items-center">
+                <img [src]="alumnos[0].medalla" width="30px" alt="">
+                <p class="my-0">Medalla basica 200 puntos alcanzados</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="cuerpo mt-5 d-flex justify-content-center">
-        <div class="w-75 py-4">
-          <app-table class="text-center"></app-table>
+        <div class="col-10 py-4">
+          <app-table class=""></app-table>
           <!--Pagiacion-->
-          <div class="mt-3 d-flex justify-content-center">
+          
+          <!-- <div class="mt-3 d-flex justify-content-center">
             <nav aria-label="Page navigation">
               <ul class="pagination">
                 <li class="page-item">
@@ -48,7 +99,6 @@
                   <li *ngFor="let g of alumnosTabla;let i=index" class="page-item" [ngClass]="i+1 === pageSelect? 'active':'' "
                   >
                     <button (click)="paginacion(i+1)" class="btn btn-primary page-link">{{i+1}}</button>
-                    <!-- <a href="#" class="page-link"> {{i+1}} </a> -->
                   </li>
                 </div>
                 <li class="page-item">
@@ -56,7 +106,7 @@
                 </li>
               </ul>
             </nav>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

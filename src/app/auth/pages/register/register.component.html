@@ -82,10 +82,14 @@
                       </div>
                     </div>
 
-                    <div class="text-center">
+                    <div class="d-flex justify-content-around">
                       <button type="submit" 
-                              class="btn btn-primary w-75 mt-3"
+                              class="btn btn-primary w-25 mt-3"
                               [disabled]="miFormulario.invalid || miFormulario.pending"> Registrarse</button>
+                      <button type="button" 
+                              class="btn btn-secondary w-25 mt-3"
+                              routerLink="/auth/login"
+                              > Regresar</button>
                     </div>
                 </form>
             </div>
